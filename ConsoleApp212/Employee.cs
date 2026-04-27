@@ -1,5 +1,6 @@
-﻿using System;
-using res_user;
+﻿using res_user;
+using System;
+using System.IO;
 
 namespace ConsoleApp212
 {
@@ -24,6 +25,7 @@ namespace ConsoleApp212
                 Console.WriteLine("3. Order Meal");
                 Console.WriteLine("4. View Bills");
                 Console.WriteLine("5. Logout");
+                Console.WriteLine("6. save bill");
                 Console.Write("Enter your choice: ");
                 string choice = Console.ReadLine();
 
@@ -44,6 +46,9 @@ namespace ConsoleApp212
                     case "5":
                         Console.WriteLine("Logging out...");
                         return;
+                    case "6":
+                        SaveBill();
+                        break;
                     default:
                         Console.WriteLine("Invalid choice, please try again.");
                         break;
@@ -130,5 +135,20 @@ namespace ConsoleApp212
                                   $"Total: ${bill.Total} (Ordered by: {bill.OrderedBy})");
             }
         }
+        public void SaveBill()
+        {
+            StreamWriter ss = new StreamWriter("add bill.txt");
+            foreach (var bill in RestaurantData.Bills)
+            {
+               ss.WriteLine($"time : {bill.Date} name :  {bill.MealName} x{bill.Quantity} " +
+                                  $"Total: ${bill.Total} (Ordered by: {bill.OrderedBy})");
+            }
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("The Save Data Is done!");
+            Console.ResetColor();
+            ss.Close();
+        }
     }
+    
 }

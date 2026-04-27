@@ -10,6 +10,9 @@ namespace ConsoleApp212
         void ViewMeals();
         void OrderMeal();
         void ViewBills();
+        void SaveBill();
+        
+        
     }
    
     class Program

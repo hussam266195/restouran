@@ -7,11 +7,12 @@ namespace ConsoleApp212
     {
         private Employee[] employees;
         private int employeeCount;
-
+        public DateTime Date { get; private set; }
         public Manager(string username, string password) : base(username , password)
         {
             employees = new Employee[3];
             employeeCount = 0;
+            Date = DateTime.Now;
         }
 
         public override string GetRole()
@@ -68,6 +69,9 @@ namespace ConsoleApp212
             employees[employeeCount] = new Employee(username, password);
             employeeCount++;
             Console.WriteLine("Employee added successfully.");
+            Console.WriteLine(DateTime.Now);
+
+           
         }
 
         public Employee FindEmployee(string username)
