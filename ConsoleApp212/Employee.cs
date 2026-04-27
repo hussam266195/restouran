@@ -9,7 +9,7 @@ namespace ConsoleApp212
         {
         }
 
-        public string GetRole()
+        public override string GetRole()
         {
             return "Employee";
         }
