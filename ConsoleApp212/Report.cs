@@ -30,7 +30,6 @@ namespace ConsoleApp212
             }
         }
 
-        
         public override string GetRole()
         {
             return "Report";

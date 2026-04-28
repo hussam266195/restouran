@@ -40,7 +40,6 @@ namespace ConsoleApp212
                 else if (username == report.Username && password == report.Password)
                 {
                     currentUser = report;
-                    //  currentUser = manager.FindEmployee2(username, password);
                 }
                 else
                 {
