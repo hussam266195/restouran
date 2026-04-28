@@ -6,11 +6,13 @@ namespace ConsoleApp212
     class Manager : User
     {
         private Employee[] employees;
+        private Report[] report;
         private int employeeCount;
         public DateTime Date { get; private set; }
         public Manager(string username, string password) : base(username , password)
         {
             employees = new Employee[3];
+            report = new Report[3];
             employeeCount = 0;
             Date = DateTime.Now;
         }
@@ -96,5 +98,6 @@ namespace ConsoleApp212
             }
             return null;
         }
+     
     }
 }

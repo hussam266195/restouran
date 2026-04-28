@@ -21,7 +21,7 @@ namespace ConsoleApp212
         {
            
             Manager manager = new Manager("admin", "admin123");
-           
+            Report report = new Report("report", "123");
             while (true)
             {
                 Console.Clear();
@@ -37,10 +37,16 @@ namespace ConsoleApp212
                 {
                     currentUser = manager;
                 }
+                else if (username == report.Username && password == report.Password)
+                {
+                    currentUser = report;
+                    //  currentUser = manager.FindEmployee2(username, password);
+                }
                 else
                 {
                     currentUser = manager.FindEmployee(username, password);
                 }
+               
 
 
                 if (currentUser == null)
